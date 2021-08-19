@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link href="./css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="layout">
+
+        <!--Menu-->
+        <nav class="navbar shadow navbar-expand navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><span>MCOP</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">Команды</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!--Content-->
+        <div class="content-block">
+          <div class="card square-card">
+            <div class="down">
+              <div class="up">
+                <div class="squeeze">
+                  <div class="rotate-in">
+                    <div class="rotate-out">
+                      <div class="square"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Sidebar-->
+        <div class="container">
+            <div class="sidebar shadow">
+                <div class="logo-details">
+                  <i class='bx bxl-c-plus-plus icon'></i>
+                    <div class="logo_name">MCOP</div>
+                    <i class='fas fa-bars' id="btn" ></i>
+                </div>
+                <ul class="nav-list">
+                  <li>
+                      <i class='fa fa-search' ></i>
+                      <input type="text" placeholder="Search...">
+                      <span class="tooltip">Search</span>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fas fa-border-all"></i>
+                      <span class="links_name">Dashboard</span>
+                    </a>
+                      <span class="tooltip">Dashboard</span>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class='fa fa-user' ></i>
+                      <span class="links_name">User</span>
+                    </a>
+                    <span class="tooltip">User</span>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="far fa-comment"></i>
+                      <span class="links_name">Messages</span>
+                    </a>
+                    <span class="tooltip">Messages</span>
+                  </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+
+        <script>
+            let sidebar = document.querySelector(".sidebar");
+            let navbar = document.querySelector(".navbar");
+            let navbarBrand = document.querySelector(".navbar-brand");
+            let closeBtn = document.querySelector("#btn");
+            let searchBtn = document.querySelector(".fa-search");
+          
+            closeBtn.addEventListener("click", ()=>{
+              sidebar.classList.toggle("open");
+              navbar.classList.toggle("open");
+              navbarBrand.classList.toggle("open");
+              menuBtnChange();//calling the function(optional)
+            });
+          
+            searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+              sidebar.classList.toggle("open");
+              menuBtnChange(); //calling the function(optional)
+            });
+          
+            // following are the code to change sidebar button(optional)
+            function menuBtnChange() {
+                if(sidebar.classList.contains("open")){
+                    closeBtn.classList.replace("fa-bars","fa-grip-lines-vertical");//replacing the iocns class
+                }
+                else {
+                    closeBtn.classList.replace("fa-grip-lines-vertical", "fa-bars");//replacing the iocns class
+                }
+            }
+            </script>
+    </body>
+</html>
